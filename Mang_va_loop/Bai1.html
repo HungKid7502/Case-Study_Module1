@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<!-- Cho mảng a chỉ chứa các số nguyên 
+    Xây dựng mảng b là prefix sums của mảng a -->
+
 <body>
-    
+    <script>
+        do {
+            var n = window.prompt("Nhập số phần tử của mảng:");
+        } while (n <= 0);
+        // Khởi tạo mảng a
+        var a = [];
+        for (var i = 0; i < n; i++) {
+            a.push(+prompt(`Nhập phần tử a[${i}]`));
+        }
+        document.write(`a[] = ${a}`);
+        document.write("</br>");
+
+        // Khởi tạo mảng b
+        var b = [];
+        for (var i = 0; i < n; i++) {
+            if (i == 0) {
+                b[i] = a[i];
+            } else {
+                b[i] = a[i] + b[i - 1];
+            }
+        }
+        document.write(`b[] = ${b}`);
+
+    </script>
+
 </body>
+
 </html>
